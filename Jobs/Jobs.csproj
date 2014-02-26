@@ -207,7 +207,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <OpenAccessPath>$(SolutionDir)..\..\..\..\..\Common\Dependencies</OpenAccessPath>
+    <OpenAccessPath>C:\GitHub\Telerik.Sitefinity.Samples.Dependencies</OpenAccessPath>
   </PropertyGroup>
-  <Import Condition="Exists('C:\Users\dabour\AppData\Local\Telerik.Sitefinity.SDK\Dependencies\OpenAccess.targets')" Project="C:\Users\dabour\AppData\Local\Telerik.Sitefinity.SDK\Dependencies\OpenAccess.targets" />
+  <Import Condition="Exists('$(OpenAccessPath)\OpenAccess.targets')" Project="$(OpenAccessPath)\OpenAccess.targets" />
 </Project>
