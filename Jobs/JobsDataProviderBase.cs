@@ -71,11 +71,6 @@ namespace Jobs
             if (itemType == null)
                 throw new ArgumentNullException("itemType");
 
-            if (itemType == typeof(Comment))
-            {
-                return new List<Comment>();
-            }
-
             if (itemType == typeof(JobApplication))
                 return SetExpressions(this.GetJobApplications(), filterExpression, orderExpression, skip, take, ref totalCount);
 
