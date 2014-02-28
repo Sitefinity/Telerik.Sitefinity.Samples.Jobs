@@ -31,7 +31,6 @@ The Jobs sample project demonstrates how to create a jobs module that allows use
 
 3. In Solution Explorer, navigate to _SitefinityWebApp_ -> *App_Data* -> _Sitefinity_ -> _Configuration_ and select the **DataConfig.config** file. 
 4. Modify the **connectionString** value to match your server address.
-5. Build the solution.
 
 
 ### Integrate the OpenAccess enhancer
