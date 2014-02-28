@@ -1,7 +1,7 @@
 Telerik.Sitefinity.Samples.Jobs
 ===============================
 
-The example showcases how to create a jobs module that allows users to submit jobs applications.
+The Jobs sample project demonstrates how to create a jobs module that allows users to submit jobs applications.
 
 
 
