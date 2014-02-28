@@ -38,10 +38,10 @@ The example showcases how to create a jobs module that allows users to submit jo
 
 Sitefinity ships with OpenAccess ORM. To use OpenAccess in the data provider of a module, you must integrate the OpenAccess enhancer. To do this:
 
-1. From the context menu of the project **Telerik.StarterKit.Modules.Products**, click _Unload Project_.
+1. From the context menu of the project **Jobs**, click _Unload Project_.
 2. From the context menu of the unloaded project, click _Edit Jobs.csproj_.
-3. Find the **<ProjectExtensions>** tag and replace it with the following lines of code:
-
+3. Find the **<ProjectExtensions>** tag and replace it with the following lines of code: 
+ 
 ```xml
 <ProjectExtensions>
   <VisualStudio>
