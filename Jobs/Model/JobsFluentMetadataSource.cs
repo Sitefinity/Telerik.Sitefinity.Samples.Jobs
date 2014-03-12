@@ -17,8 +17,8 @@ namespace Jobs.Model
         protected override IList<IOpenAccessFluentMapping> BuildCustomMappings()
         {
             var sitefinityMappings = new List<IOpenAccessFluentMapping>();
-            sitefinityMappings.Add(new Telerik.Sitefinity.Model.CommonFluentMapping(this.Context) { });
-            sitefinityMappings.Add(new Telerik.Sitefinity.Model.ContentBaseFluentMapping(this.Context) { });
+            sitefinityMappings.Add(new Telerik.Sitefinity.Model.CommonFluentMapping(this.Context));
+            sitefinityMappings.Add(new Telerik.Sitefinity.Model.ContentBaseFluentMapping(this.Context));
             sitefinityMappings.Add(new JobsFluentMapping(this.Context));
             return sitefinityMappings;
         }

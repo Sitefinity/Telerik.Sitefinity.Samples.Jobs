@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using Jobs;
-using Telerik.Sitefinity.Configuration;
-using Telerik.Sitefinity.Abstractions.VirtualPath.Configuration;
+using Telerik.Sitefinity.Abstractions;
 using Telerik.Sitefinity.Samples.Common;
 using Jobs.PublicControls;
 using Telerik.Sitefinity.Services;
@@ -27,8 +21,8 @@ namespace SitefinityWebApp
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Telerik.Sitefinity.Abstractions.Bootstrapper.Initializing += new EventHandler<Telerik.Sitefinity.Data.ExecutingEventArgs>(Bootstrapper_Initializing);
-            Telerik.Sitefinity.Abstractions.Bootstrapper.Initialized += new EventHandler<Telerik.Sitefinity.Data.ExecutedEventArgs>(Bootstrapper_Initialized);
+            Bootstrapper.Initializing += new EventHandler<Telerik.Sitefinity.Data.ExecutingEventArgs>(Bootstrapper_Initializing);
+            Bootstrapper.Initialized += new EventHandler<Telerik.Sitefinity.Data.ExecutedEventArgs>(Bootstrapper_Initialized);
         }
 
         protected void Bootstrapper_Initializing(object sender, Telerik.Sitefinity.Data.ExecutingEventArgs args)
@@ -43,7 +37,7 @@ namespace SitefinityWebApp
         {
             if (args.CommandName == "Bootstrapped")
             {
-                SystemManager.RunWithElevatedPrivilegeDelegate worker = new SystemManager.RunWithElevatedPrivilegeDelegate(CreateSampleWorker);
+                var worker = new SystemManager.RunWithElevatedPrivilegeDelegate(CreateSampleWorker);
                 SystemManager.RunWithElevatedPrivilege(worker);
             }
         }        
@@ -60,7 +54,7 @@ namespace SitefinityWebApp
             {
                 SampleUtilities.SetTemplateToPage(new Guid(JobApplicationPageId), new Guid(SamplesTemplateId));
 
-                JobApplicationUpload jobApplicationUpload = new JobApplicationUpload();
+                var jobApplicationUpload = new JobApplicationUpload();
                 SampleUtilities.AddControlToPage(new Guid(JobApplicationPageId), jobApplicationUpload, "Content", "UploadJobsWidget");
             }
 

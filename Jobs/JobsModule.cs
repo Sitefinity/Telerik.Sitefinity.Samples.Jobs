@@ -40,7 +40,7 @@ namespace Jobs
         {
             get
             {
-                return JobsModule.JobsPageGroupID;
+                return JobsModule.JobsPageGroupId;
             }
         }
 
@@ -50,7 +50,7 @@ namespace Jobs
             Config.RegisterSection<JobsConfig>();
             Res.RegisterResource<JobsResources>();
 
-            ObjectFactory.RegisterWebService(typeof(JobsBackendService), "Sitefinity/Services/Content/Jobs.svc");
+            SystemManager.RegisterWebService(typeof(JobsBackendService), JobsModule.WebServiceUrl);
             TypeResolutionService.RegisterAssembly(typeof(JobsModule).Assembly.GetName());
         }
 
@@ -99,7 +99,7 @@ namespace Jobs
         protected override void InstallPages(SiteInitializer initializer)
         {
             initializer.Installer
-                .CreateModuleGroupPage(JobsModule.JobsPageGroupID, JobsModule.ModuleName)
+                .CreateModuleGroupPage(JobsModule.JobsPageGroupId, JobsModule.ModuleName)
                 .PlaceUnder(CommonNode.TypesOfContent)
                 .LocalizeUsing<JobsResources>()
                 .SetTitleLocalized("JobsTitle")
@@ -137,13 +137,15 @@ namespace Jobs
                     .Done();
         }
 
-        public static readonly Guid JobsPageGroupID = new Guid("13FA3CB0-6F00-4DFB-A534-28EA60252A16");
+        public static readonly Guid JobsPageGroupId = new Guid("13FA3CB0-6F00-4DFB-A534-28EA60252A16");
         public static readonly Guid JobsModuleLandingPage = new Guid("A52C36E1-3D29-4F39-BB8D-BB1F064E556A");
-        public static string JobsVirtualPath = "~/SFJobs/";
+        public const string JobsVirtualPath = "~/SFJobs/";
 
         /// <summary>
         /// The id of the jobs backed content view control.
         /// </summary>
         public const string JobsBackendContentViewControlId = "jobsCntView";
+
+        private const string WebServiceUrl = "Sitefinity/Services/Content/Jobs.svc";
     }
 }

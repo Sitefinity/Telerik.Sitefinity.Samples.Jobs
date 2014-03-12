@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Jobs.Model;
-using Telerik.Sitefinity.GenericContent.Model;
 using Telerik.Sitefinity.Modules.GenericContent;
+using Telerik.Sitefinity.GenericContent.Model;
+using System.Collections.Generic;
 
 namespace Jobs
 {
@@ -74,17 +74,17 @@ namespace Jobs
             if (itemType == typeof(JobApplication))
                 return SetExpressions(this.GetJobApplications(), filterExpression, orderExpression, skip, take, ref totalCount);
 
+            if (itemType == typeof(Comment))
+            {
+                return new List<Comment>();
+            }
+
             throw GetInvalidItemTypeException(itemType, this.GetKnownTypes());
         }
 
         public override Type[] GetKnownTypes()
         {
             return new[] { typeof(JobApplication) };
-        }
-
-        public override Type GetParentTypeFor(Type contentType)
-        {
-            return null;
         }
 
         public override IEnumerable GetItemsByTaxon(Guid taxonId, bool isSingleTaxon, string propertyName, Type itemType, string filterExpression, string orderExpression, int skip, int take, ref int? totalCount)

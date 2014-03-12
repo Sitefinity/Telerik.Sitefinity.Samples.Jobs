@@ -22,6 +22,10 @@
     </UpgradeBackupLocation>
     <TargetFrameworkProfile />
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -610,7 +614,6 @@
     <Content Include="Sitefinity\Services\Lists\ListItemService.svc" />
     <Content Include="Sitefinity\Services\Lists\ListService.svc" />
     <Content Include="Sitefinity\Services\Lists\ListsModuleService.svc" />
-    <Content Include="Sitefinity\Services\LoadBalancing\AzureSystemWebService.svc" />
     <Content Include="Sitefinity\Services\LoadBalancing\SystemWebService.svc" />
     <Content Include="Sitefinity\Services\Localization\AllCulturesResource.svc" />
     <Content Include="Sitefinity\Services\Localization\DualLocalizationResources.svc" />
@@ -622,7 +625,6 @@
     <Content Include="Sitefinity\Services\Newsletters\ABCampaign.svc" />
     <Content Include="Sitefinity\Services\Newsletters\Campaign.svc" />
     <Content Include="Sitefinity\Services\Newsletters\DynamicList.svc" />
-    <Content Include="Sitefinity\Services\Newsletters\List.svc" />
     <Content Include="Sitefinity\Services\Newsletters\MailingList.svc" />
     <Content Include="Sitefinity\Services\Newsletters\MessageTemplate.svc" />
     <Content Include="Sitefinity\Services\Newsletters\Settings.svc" />
@@ -701,7 +703,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3525</DevelopmentServerPort>
+          <DevelopmentServerPort>46244</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
