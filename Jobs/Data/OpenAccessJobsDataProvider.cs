@@ -133,6 +133,6 @@ namespace Jobs.Data
         public MetadataSource GetMetaDataSource(IDatabaseMappingContext context)
         {
             return new JobsFluentMetadataSource(context);
-        }
+        } 
     }
 }
