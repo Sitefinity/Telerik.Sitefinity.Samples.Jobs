@@ -119,7 +119,7 @@ namespace Jobs.Data
         /// Gets or sets the OpenAccess context. Alternative to Database.
         /// </summary>
         /// <value>The context.</value>
-        public OpenAccessProviderContext Context
+        public OpenAccessProviderContext Context 
         {
             get;
             set;
