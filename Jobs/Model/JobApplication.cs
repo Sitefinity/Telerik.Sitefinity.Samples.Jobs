@@ -93,5 +93,6 @@ namespace Jobs.Model
         private string phone;
         private string firstName;
         private string lastName;
+
     }
 }
