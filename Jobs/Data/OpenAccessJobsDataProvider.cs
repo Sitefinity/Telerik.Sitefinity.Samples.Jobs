@@ -126,7 +126,7 @@ namespace Jobs.Data
         }
 
         /// <summary>
-        /// Gets the meta data source.
+        /// Gets the meta data source. 
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
