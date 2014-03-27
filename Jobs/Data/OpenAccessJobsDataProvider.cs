@@ -12,7 +12,7 @@ using Telerik.Sitefinity.Security;
 
 namespace Jobs.Data
 {
-    [ContentProviderDecorator(typeof(OpenAccessContentDecorator))]
+    [ContentProviderDecorator(typeof(OpenAccessContentDecorator))] 
     private class OpenAccessJobsDataProvider : JobsDataProviderBase, IOpenAccessDataProvider
     {
         public Database Database
