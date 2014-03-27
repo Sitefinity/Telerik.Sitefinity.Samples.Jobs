@@ -5,7 +5,7 @@ using Telerik.Sitefinity.GenericContent.Model;
 
 namespace Jobs.Model
 {
-    [DataContract(Namespace = "http://sitefinity.com/samples/jobsmodule", Name = "JobApplication")]
+    [DataContract(Namespace = "http://sitefinity.com/samples/jobsmodule", Name = "JobApplication")] 
     [ManagerType("Jobs.JobsManager, Jobs")]
     [Persistent(IdentityField = "contentId")]
     public class JobApplication : Content
