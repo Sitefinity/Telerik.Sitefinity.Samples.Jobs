@@ -88,7 +88,7 @@ namespace Jobs.Model
             }
         }
 
-        private string referral;
+        private string referral; 
         private string text;
         private string phone;
         private string firstName;
