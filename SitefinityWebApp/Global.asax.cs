@@ -10,7 +10,7 @@ namespace SitefinityWebApp
 	public class Global : System.Web.HttpApplication
 	{
         private const string SamplesThemeName = "SamplesTheme";
-        private const string SamplesThemePath = "~/App_Data/Sitefinity/WebsiteTemplates/Samples/App_Themes/Samples"; 
+        private const string SamplesThemePath = "~/App_Data/Sitefinity/WebsiteTemplates/Samples/App_Themes/Samples";  
 
         private const string SamplesTemplateId = "015b4db0-1d4f-4938-afec-5da59749e0e8";
         private const string SamplesTemplateName = "SamplesMasterPage";
