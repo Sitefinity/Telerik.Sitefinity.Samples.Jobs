@@ -74,7 +74,7 @@ namespace Jobs.Model
             }
         }
 
-        [DataMember]
+        [DataMember] 
         [FieldAlias("referral")]
         public string Referral
         {
