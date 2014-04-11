@@ -14,6 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\SitefinityWebApp\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <EnhancerAssembly>$(SolutionDir)\packages\OpenAccess.CodeFirst.2013.3.1211.3\tools\enhancer\enhancer.exe</EnhancerAssembly>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,12 +64,6 @@
     </Reference>
     <Reference Include="Telerik.Sitefinity.Samples.Common">
       <HintPath>..\SitefinityWebApp\bin\Telerik.Sitefinity.Samples.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Sitefinity.Forums, Version=6.3.5000.0, Culture=neutral, PublicKeyToken=b28c218413bdf563">
-      <HintPath>C:\Users\dabour\AppData\Local\Telerik.Sitefinity.SDK\Dependencies\Telerik.Sitefinity.Forums.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Sitefinity.RecurrentRules, Version=6.3.5000.0, Culture=neutral, PublicKeyToken=b28c218413bdf563">
-      <HintPath>C:\Users\dabour\AppData\Local\Telerik.Sitefinity.SDK\Dependencies\Telerik.Sitefinity.RecurrentRules.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Sitefinity.Resources, Version=6.3.5000.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\SitefinityWebApp\packages\Telerik.Sitefinity.Core.6.3.5000.0\lib\net40\Telerik.Sitefinity.Resources.dll</HintPath>
@@ -124,9 +119,11 @@
     <EmbeddedResource Include="Resources\Views\JobApplicationUpload.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="OpenAccessNuGet.targets" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="OpenAccessNuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -136,12 +133,8 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties OpenAccess_ConfigFile="App.config" OpenAccess_ConnectionId="DatabaseConnection1" OpenAccess_Enhancing="False" OpenAccess_UpdateDatabase="False" OpenAccess_EnhancementOutputLevel="1" />
+      <UserProperties OpenAccess_EnhancementOutputLevel="1" OpenAccess_UpdateDatabase="False" OpenAccess_Enhancing="False" OpenAccess_ConnectionId="DatabaseConnection1" OpenAccess_ConfigFile="App.config" />
     </VisualStudio>
   </ProjectExtensions>
-  <PropertyGroup>
-    <OpenAccessPath>C:\GitHub\Telerik.Sitefinity.Samples.Dependencies</OpenAccessPath>
-  </PropertyGroup>
-  <Import Condition="Exists('$(OpenAccessPath)\OpenAccess.targets')" Project="$(OpenAccessPath)\OpenAccess.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>
