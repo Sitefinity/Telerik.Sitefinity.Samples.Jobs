@@ -39,11 +39,14 @@ The project refers to the following NuGet packages:
 
 * OpenAccess.Core.nupkg
 
+* OpenAccess.CodeFirst.nupkg
+
 * Telerik.Sitefinity.Content.nupkg
 
 * Telerik.Web.UI.nupkg
 
-* SitefinityWebApp.nupkg
+
+**SitefinityWebApp** lbrary
 
 * Telerik.Sitefinity.All.nupkg
 
