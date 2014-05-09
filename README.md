@@ -1,6 +1,8 @@
 Telerik.Sitefinity.Samples.Jobs
 ===============================
 
+[![Build Status](http://sdk-jenkins-ci.cloudapp.net/buildStatus/icon?job=Telerik.Sitefinity.Samples.Jobs.CI)](http://sdk-jenkins-ci.cloudapp.net/job/Telerik.Sitefinity.Samples.Jobs.CI/)
+
 The Jobs sample project demonstrates how to create a jobs module that allows users to submit jobs applications.
 The Jobs and HR module harnesses the built-in features of Sitefinity’s Content model. Its purpose is to manage job applications. Frontend users have the possibility to submit their job applications, while backend users are able to access a page in Sitefinity backend that provides an overview of all submitted applications.
 
