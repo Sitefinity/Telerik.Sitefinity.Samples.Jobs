@@ -21,21 +21,16 @@ namespace SitefinityWebApp
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Bootstrapper.Initializing += new EventHandler<Telerik.Sitefinity.Data.ExecutingEventArgs>(Bootstrapper_Initializing);
             Bootstrapper.Initialized += new EventHandler<Telerik.Sitefinity.Data.ExecutedEventArgs>(Bootstrapper_Initialized);
         }
 
-        protected void Bootstrapper_Initializing(object sender, Telerik.Sitefinity.Data.ExecutingEventArgs args)
+        protected void Bootstrapper_Initialized(object sender, Telerik.Sitefinity.Data.ExecutedEventArgs e)
         {
-            if (args.CommandName == "RegisterRoutes")
+            if (e.CommandName == "RegisterRoutes")
             {
                 SampleUtilities.RegisterModule<JobsModule>("Jobs", "This module presents showcases how to create a jobs module that allows users to submit jobs applications.");
             }
-        }
-
-        protected void Bootstrapper_Initialized(object sender, Telerik.Sitefinity.Data.ExecutedEventArgs args)
-        {
-            if (args.CommandName == "Bootstrapped")
+            if ((Bootstrapper.IsDataInitialized) && (e.CommandName == "Bootstrapped"))
             {
                 var worker = new SystemManager.RunWithElevatedPrivilegeDelegate(CreateSampleWorker);
                 SystemManager.RunWithElevatedPrivilege(worker);
@@ -57,10 +52,6 @@ namespace SitefinityWebApp
                 var jobApplicationUpload = new JobApplicationUpload();
                 SampleUtilities.AddControlToPage(new Guid(JobApplicationPageId), jobApplicationUpload, "Content", "UploadJobsWidget");
             }
-
-            //create admin
-            SampleUtilities.CreateUsersAndRoles();
-            //SampleUtilities.FrontEndAuthenticate();
         }
 
 		protected void Application_BeginRequest(object sender, EventArgs e) 
